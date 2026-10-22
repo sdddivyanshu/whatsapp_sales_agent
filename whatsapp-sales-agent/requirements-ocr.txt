@@ -1,0 +1,4 @@
+# Optional: OCR for scanned catalogues (also needs the `tesseract` system package)
+pytesseract>=0.3.10
+pypdfium2>=4.30
+Pillow>=10.0

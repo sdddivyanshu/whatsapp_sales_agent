@@ -1,0 +1,21 @@
+services:
+  agent:
+    build:
+      context: .
+      args:
+        INSTALL_OCR: "false"     # set "true" to OCR scanned catalogues
+    image: whatsapp-sales-agent:latest
+    env_file: .env
+    environment:
+      DATABASE_PATH: /app/data/agent.db
+      LEADS_CSV_PATH: /app/data/leads.csv
+      KNOWLEDGE_BASE_DIR: /app/data/knowledge_base
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data                       # leads.csv, knowledge_base/, agent.db
+      - ./config:/app/config:ro                # business_profile.yaml, qualification_rules.yaml
+      - ./secrets:/app/secrets:ro              # Google service-account JSON (optional)
+      - ./backups:/app/backups
+    restart: unless-stopped
+    stop_grace_period: 40s                     # let the in-flight job finish on shutdown

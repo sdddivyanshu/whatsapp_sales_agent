@@ -1,0 +1,30 @@
+# Lead qualification rules (copy to config/qualification_rules.yaml to customise).
+# Classification = deterministic score from facts the customer stated.
+
+weights:
+  requirement_clear: 25          # a machine/model requirement is known
+  application_known: 15          # application, material or workpiece described
+  technical_requirements_known: 10
+  purpose_known: 5               # new facility / expansion / replacement
+  timeline_near: 25              # purchase within near_term_months
+  timeline_mid: 10               # purchase within mid_term_months
+  sales_action_requested: 20     # asked for quotation, demo, call or site visit
+  ready_to_buy_stage: 15         # buying stage = quotation / ready_to_buy
+
+thresholds:
+  hot: 70
+  warm: 40                       # below warm => COLD
+
+timeline:
+  near_term_months: 3
+  mid_term_months: 6
+
+hot_requires:
+  near_term_timeline: true
+  sales_action_requested: true
+
+# Any of these flags makes the lead NEEDS_HUMAN_REVIEW.
+human_review_triggers:
+  - price_conflict               # conflicting price-list entries were hit
+  - complaint                    # customer reported an issue
+  - repeated_guard_violation     # the model twice produced unsafe replies

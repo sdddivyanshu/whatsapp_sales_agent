@@ -1,0 +1,49 @@
+# FICTIONAL demo profile for mock-mode demonstrations only. Do not use in production.
+company:
+  name: Demo Machine Tools (fictional sample)
+  short_intro: We supply EDM Wirecut, EDM Drill and EDM Sparking machines to tool
+    rooms (fictional demo company).
+  full_profile: Fictional demo profile used only for local demonstrations.
+  years_in_business: CONFIGURE_ME
+  capabilities:
+  - Supply and installation of EDM machines (demo)
+products:
+  categories:
+  - EDM Wirecut
+  - EDM Drill
+  - EDM Sparking (Die-sinking)
+pricing:
+  default_currency: INR
+service:
+  areas: Pan-India (demo)
+  warranty_policy: CONFIGURE_ME
+  service_policy: CONFIGURE_ME
+contact:
+  sales_phone: '+919000000001'
+  sales_email: sales@demo-machine-tools.example
+  whatsapp_number: '+919000000000'
+  escalation_name: Demo Sales Manager
+  escalation_phone: '+919000000002'
+  escalation_email: manager@demo-machine-tools.example
+  business_hours: Mon-Sat, 9:30 AM - 6:30 PM IST
+conversation:
+  supported_languages:
+  - English
+  - Hindi
+  brand_tone: polite, warm, professional and concise; respectful Indian business English
+  fallback_reply: Thank you for your message. Let me check this with our sales team
+    and get back to you shortly.
+  opt_out_confirmation: Understood. We will not send you any further messages. Thank
+    you for your time.
+outreach:
+  template_preview: Hello {customer_name}, this is {our_company}. Thank you for your
+    enquiry about {requirement}. I can help with product details and pricing. Could
+    you tell me a little about your application?
+  neutral_greeting_name: Sir/Madam
+follow_up:
+  hot_lead_response: Call or send quotation within 24 hours
+  warm_lead_response: Follow up within 1 week
+  cold_lead_response: Nurture; follow up in 1-2 months
+closing:
+  closing_message: Thank you for your time. Please message us here whenever you need
+    any help.

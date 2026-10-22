@@ -1,0 +1,18 @@
+[project]
+name = "whatsapp-sales-agent"
+version = "1.0.0"
+description = "WhatsApp AI sales and lead-qualification agent for an industrial machinery business"
+requires-python = ">=3.12"
+readme = "README.md"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+markers = [
+    "live: integration tests that call real external APIs (need credentials; skipped by default)",
+]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 110
+target-version = "py312"

@@ -1,0 +1,66 @@
+# Business profile used by the sales agent.
+# Copy to config/business_profile.yaml and replace every CONFIGURE_ME value.
+# Any field still containing CONFIGURE_ME is treated as UNKNOWN: the agent will
+# not state it and will offer to have the sales team confirm instead.
+# Nothing here is invented by the application.
+
+company:
+  name: "CONFIGURE_ME Company Name"
+  short_intro: "CONFIGURE_ME One or two sentences, e.g. 'We manufacture and supply EDM machines for tool rooms across India.'"
+  full_profile: "CONFIGURE_ME Longer company profile (history, plant, certifications)."
+  years_in_business: "CONFIGURE_ME"          # e.g. "25 years" - leave CONFIGURE_ME if unsure
+  capabilities:
+    - "CONFIGURE_ME e.g. Manufacturing of EDM Wirecut machines"
+    - "CONFIGURE_ME e.g. Trading of imported EDM consumables"
+
+products:
+  # Example categories only - list what you actually sell.
+  categories:
+    - "EDM Wirecut"
+    - "EDM Drill"
+    - "EDM Sparking (Die-sinking)"
+
+pricing:
+  # Only set this if your price lists are always in this currency when no
+  # currency is printed. Leave empty to require an explicit currency.
+  default_currency: "INR"
+
+service:
+  areas: "CONFIGURE_ME e.g. Pan-India; service engineers in Pune, Chennai, Ludhiana"
+  warranty_policy: "CONFIGURE_ME Standard warranty terms"
+  service_policy: "CONFIGURE_ME AMC / spare parts / response-time policy"
+
+contact:
+  sales_phone: "CONFIGURE_ME +91XXXXXXXXXX"
+  sales_email: "CONFIGURE_ME sales@example.com"
+  whatsapp_number: "CONFIGURE_ME +91XXXXXXXXXX"
+  escalation_name: "CONFIGURE_ME Sales Manager name"
+  escalation_phone: "CONFIGURE_ME +91XXXXXXXXXX"
+  escalation_email: "CONFIGURE_ME manager@example.com"
+  business_hours: "CONFIGURE_ME e.g. Mon-Sat, 9:30 AM - 6:30 PM IST"
+
+conversation:
+  supported_languages: ["English", "Hindi"]
+  brand_tone: "polite, warm, professional and concise; respectful Indian business English"
+  fallback_reply: "Thank you for your message. Let me check this with our sales team and get back to you shortly."
+  opt_out_confirmation: "Understood. We will not send you any further messages. Thank you for your time."
+
+outreach:
+  # Must mirror the APPROVED WhatsApp template body (WHATSAPP_TEMPLATE_NAME).
+  # Placeholders available: {customer_name} {company_name} {requirement} {our_company} {sales_phone}
+  # The order of template variables is configured with WHATSAPP_TEMPLATE_PARAMS.
+  template_preview: "Hello {customer_name}, this is {our_company}. Thank you for your enquiry about {requirement}. I can help with product details and pricing. Could you tell me a little about your application?"
+  neutral_greeting_name: "Sir/Madam"
+
+follow_up:
+  # Informational rules used in next-action recommendations. Automated
+  # follow-up messages outside the 24h window would require an approved
+  # template and are intentionally NOT sent automatically.
+  hot_lead_response: "Call or send quotation within 24 hours"
+  warm_lead_response: "Follow up within 1 week"
+  cold_lead_response: "Nurture; follow up in 1-2 months"
+
+closing:
+  # Conversation closure is also configured via env:
+  # INACTIVITY_CLOSE_MINUTES, NO_RESPONSE_CLOSE_HOURS, REOPEN_ON_INBOUND
+  closing_message: "Thank you for your time. Please message us here whenever you need any help."
